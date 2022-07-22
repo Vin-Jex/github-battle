@@ -144,7 +144,6 @@ export default class Popular extends Component {
 
   render() {
     const { selectedLanguage, repos, error } = this.state
-
     return (
       <Fragment>
         <LanguagesNav 

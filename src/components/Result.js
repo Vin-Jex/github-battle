@@ -123,30 +123,35 @@ import { FaCompass, FaBriefcase, FaUsers, FaUser,FaUserFriends} from 'react-icon
 import Cards from './Cards'
 import PropTypes from 'prop-types'
 import Loading from './Loading'
+import ToolTip from './ToolTip'
 
 function ProfileList({ profile }) {
   return (
     <ul className="card-list">
-    <li>
-      <FaUser color='rgb(239, 115, 115)' size={22} />{profile.name}
-    </li>
-    {profile.location && (
       <li>
-        <FaCompass color='#795548' size={22}/> {profile.location}
+        <FaUser color='rgb(239, 115, 115)' size={22} />{profile.name}
       </li>
-    )}
-    {profile.company && (
+      {profile.location && (
+        <li>
+          <ToolTip text="User's Location">
+            <FaCompass color='#795548' size={22}/> {profile.location}
+          </ToolTip>
+        </li>
+      )}
+      {profile.company && (
+        <li>
+          <ToolTip text="User's Company">
+            <FaBriefcase color='rgb(144, 116, 255)' size={22}/> {profile.company}
+          </ToolTip>
+        </li>
+      )}
       <li>
-        <FaBriefcase color='rgb(144, 116, 255)' size={22}/> {profile.company}
+        <FaUsers color='rgb(129, 195, 245)' size={22} />{profile.followers.toLocaleString()} followers
       </li>
-    )}
-    <li>
-      <FaUsers color='rgb(129, 195, 245)' size={22} />{profile.followers.toLocaleString()} followers
-    </li>
-    <li>
-      <FaUserFriends color='rgb(64, 183, 95)' size={22} />{profile.following.toLocaleString()} following
-    </li>
-  </ul>
+      <li>
+        <FaUserFriends color='rgb(64, 183, 95)' size={22} />{profile.following.toLocaleString()} following
+      </li>
+    </ul>
   )
 }
 

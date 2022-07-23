@@ -117,11 +117,12 @@ export default class Result extends Component {
  */
 
 
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import { battle } from '../utils/api'
-import { FaCompass, FaBriefcase, FaCode, FaUsers, FaUser,FaUserFriends} from 'react-icons/fa'
+import { FaCompass, FaBriefcase, FaUsers, FaUser,FaUserFriends} from 'react-icons/fa'
 import Cards from './Cards'
 import PropTypes from 'prop-types'
+import Loading from './Loading'
 
 function ProfileList({ profile }) {
   return (
@@ -146,10 +147,14 @@ function ProfileList({ profile }) {
       <FaUserFriends color='rgb(64, 183, 95)' size={22} />{profile.following.toLocaleString()} following
     </li>
   </ul>
+  )
+}
 
 
-/*   <ul className="card-list">
-    <li>
+/* 
+
+<ul className="card-list">
+   <li>
       <FaUser color='rgb(239, 115, 115)' size={22} />{profile.name}
     </li>
     {profile.location && (
@@ -168,9 +173,10 @@ function ProfileList({ profile }) {
     <li>
       <FaUserFriends color='rgb(64, 183, 95)' size={22} />{profile.following.toLocaleString()} following
     </li>
-  </ul> */
-  )
-}
+  </ul>
+  
+*/
+
 
 ProfileList.propTypes = {
   profile: PropTypes.object.isRequired
@@ -211,7 +217,7 @@ export default class Result extends Component {
     const {winner, loser, error, loading} = this.state
 
     if(loading === true) {
-      return <p>LOADING...</p>
+      return <Loading text='Battling' speed={500} />
     }
 
     if(error) {
@@ -221,27 +227,40 @@ export default class Result extends Component {
     }
 
     return (
-      <div className='grid space-around container-sm'>
-        <Cards 
-          header={winner.score === loser.score ? 'Tie' : 'Winner'}
-          subheader={`Score: ${winner.score.toLocaleString()}`}
-          avatar={winner.profile.avatar_url}
-          href={winner.profile.html_url}
-          name={winner.profile.login}
-        >
-          <ProfileList profile={winner.profile} />
-        </Cards>
+      <Fragment>
+        <div className='grid space-around container-sm'>
+          <Cards 
+            header={winner.score === loser.score ? 'Tie' : 'Winner'}
+            subheader={`Score: ${winner.score.toLocaleString()}`}
+            avatar={winner.profile.avatar_url}
+            href={winner.profile.html_url}
+            name={winner.profile.login}
+          >
+            <ProfileList profile={winner.profile} />
+          </Cards>
 
-        <Cards
-          header={winner.score === loser.score ? 'Tie' : 'Loser'}
-          subheader={`Score: ${loser.score.toLocaleString()}`}
-          avatar={loser.profile.avatar_url}
-          href={loser.profile.html_url}
-          name={loser.profile.login}
-        >
-          <ProfileList profile={loser.profile} />
-        </Cards>
-      </div>
+          <Cards
+            header={winner.score === loser.score ? 'Tie' : 'Loser'}
+            subheader={`Score: ${loser.score.toLocaleString()}`}
+            avatar={loser.profile.avatar_url}
+            href={loser.profile.html_url}
+            name={loser.profile.login}
+          >
+            <ProfileList profile={loser.profile} />
+          </Cards>
+        </div>
+        <button 
+          className='btn btn-dark btn-space'
+          onClick={this.props.onReset}>
+            Reset
+        </button>
+      </Fragment>
     )
   }
+}
+
+Result.propTypes = {
+  playerOne: PropTypes.string.isRequired,
+  playerTwo: PropTypes.string.isRequired,
+  onReset: PropTypes.func.isRequired
 }

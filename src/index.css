@@ -58,11 +58,11 @@ li {
   color: inherit;
 }
 
-.nav-link:focus {
+/* .nav-link:focus {
   border: .2rem solid #8595ce;
   padding: .2rem;
   border-radius: .3rem;
-}
+} */
 
 .grid {
   display: flex;
@@ -306,6 +306,18 @@ li {
 }
 
 @media screen and (max-width: 740px) {
+
+  .btn.nav-link {
+    padding: 0.4rem;
+    font-size: .8rem;
+    text-transform: capitalize;
+  }
+  .nav-link {
+    font-size: .7rem;
+    font-weight: 500;
+    box-shadow:  inset 0rem .1rem .2em rgba(0, 0, 0, 0.01);
+  }
+
   .player {
     flex: 1;
     margin: 0 0rem;
@@ -341,6 +353,18 @@ li {
 } 
 
 @media screen and (max-width: 600px) {
+
+  .btn.nav-link {
+    padding: 0.3rem;
+    font-size: .7rem;
+    text-transform: capitalize;
+  }
+  .nav-link {
+    font-size: .7rem;
+    font-weight: 400;
+    box-shadow:  inset 0rem .1rem .2em rgba(0, 0, 0, 0.01);
+  }
+
   .player-label{
     font-size: 1.2rem;
     margin-left: 0;

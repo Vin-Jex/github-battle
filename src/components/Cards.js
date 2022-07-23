@@ -17,7 +17,7 @@ export default function Cards({ header, subheader, avatar, href, name, children 
             </h4>  
         )}
         <h2 className="center-text">
-            <a href={href} className="link">
+            <a href={href} target='_blank' className="link">
                 {name}
             </a>
         </h2>

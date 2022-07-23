@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { fetchPopularRepos } from '../utils/api'
 import { FaUser, FaStar, FaCodeBranch, FaExclamationTriangle } from 'react-icons/fa'
 import Cards from './Cards';
+import Loading from './Loading';
 
 
 /******__________________________________******/
@@ -37,7 +38,7 @@ function ReposGrid({repos}) {
   return (
     <ul className='grid space-around'>
       {repos.map((repo, index) => {
-        const { name, owner, html_url, stargazers_count, forks, open_issues } = repo
+        const { /* name, */ owner, html_url, stargazers_count, forks, open_issues } = repo
         const { login, avatar_url} = owner
 
     return (
@@ -152,7 +153,7 @@ export default class Popular extends Component {
         />
         
         
-        {this.isLoading() && <p>LOADING...</p>}
+        {this.isLoading() && <Loading text='fetching repos' speed={500} />}
 
         {error && <p className='center-text error'>{error}</p>}
 

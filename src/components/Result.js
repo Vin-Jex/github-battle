@@ -129,7 +129,9 @@ function ProfileList({ profile }) {
   return (
     <ul className="card-list">
       <li>
+      <ToolTip text="Github Username">
         <FaUser color='rgb(239, 115, 115)' size={22} />{profile.name}
+        </ToolTip>
       </li>
       {profile.location && (
         <li>

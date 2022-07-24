@@ -1,6 +1,7 @@
 import React, { /* Component */ } from 'react'
 import PropTypes from 'prop-types'
-import withHover from './withHover'
+import Hover from './Hover'
+// import withHover from './withHover'
 
 const styles = {
     container: {
@@ -45,24 +46,29 @@ const styles = {
 //   }
 // }
 
-
-function ToolTip({ text, children, hovering }) {
+// Solving the problem we had with withHover component which was name inclusion
+function ToolTip({ text, children }) {
   return (
-    <div style={styles.container} >
+    <Hover>
+    {( hovering ) => (
+      <div style={styles.container} >
         {hovering === true && <div style={styles.tooltip}>{text}</div>}
             {children}
-    </div>
+      </div>
+    )}
+    </Hover>
+    
   )
 }
 
 
 ToolTip.propTypes = {
     text: PropTypes.string.isRequired,
-    hovering: PropTypes.bool.isRequired
 }
 
 ToolTip.defaultProp = {
     text: 'User\'s '
 }
 
-export default withHover(ToolTip, 'hovering');
+// export default withHover(ToolTip, 'hovering');
+export default ToolTip

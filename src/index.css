@@ -135,6 +135,11 @@ li {
   border-radius: .2rem;
 }
 
+.bg-dark {
+  background: rgb(36, 40, 42);
+  border-radius: .2rem;
+}
+
 .card {
   margin: .5rem 0;
   width: 14.5rem;
@@ -219,6 +224,11 @@ li {
   background: rgba(0, 0, 0, 0.02);
 }
 
+.player-inputs .input-dark {
+  color: #dadada;
+  background: rgba(0, 0, 0, 0.3);
+}
+
 .player-inputs button {
   flex: 1;
   margin-left: .5rem;
@@ -241,6 +251,11 @@ li {
   min-width: 2rem;
 }
 
+.btn-light {
+  color: #000;
+  background: #aaa8aa;
+}
+
 .btn-dark {
   color: #e6e6e6;
   background: #141414;
@@ -248,6 +263,11 @@ li {
 
 .btn-space {
   margin: 2rem auto;
+}
+
+.btn-light:disabled {
+  background: #292929;
+  color: #4a4a4a;
 }
 
 .btn-dark:disabled {

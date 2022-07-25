@@ -5,6 +5,7 @@ import Proptypes from "./Proptypes";
 // import State from "./State";
 import IMG1 from '../../asset/img-1.jpg'
 import Form from './Controlled Component' 
+import DynamicRouting from "./DynamicRouting";
 
 // SEPARATION OF CONCERNS
 export default class Tutorial extends Component {

@@ -1,7 +1,12 @@
 import React from 'react';
 import { ThemeConsumer } from '../contexts/theme';
 import { FaSun, FaMoon } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
+
+
+const activeStyle = {
+  color: 'rgb(187, 46, 31)'
+}
 
 export default function Nav () {
   return (
@@ -10,10 +15,21 @@ export default function Nav () {
         <nav className='nav-row space-between margin-top'>
           <ul className='nav-row nav'>
             <li>
-              <Link to='/' className='naval nav-link '>Popular</Link>
+              <NavLink 
+                to='/'
+                exact
+                activeStyle={activeStyle}
+                className='naval nav-link'>
+                  Popular
+              </NavLink>
             </li>
             <li>
-              <Link to='/battle' className='naval nav-link'>Battle</Link>
+              <NavLink 
+                to='/battle'
+                activeStyle={activeStyle}
+                className='naval nav-link'>
+                  Battle
+              </NavLink>
             </li>
           </ul>
           <button

@@ -229,7 +229,7 @@ export default class Result extends Component {
 
     if(error) {
       return  (
-        <p className='center-text error'>❗{error}</p> 
+        <p className='center-text error'>❗ {error}</p> 
       )
     }
 

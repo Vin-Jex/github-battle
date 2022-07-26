@@ -1,10 +1,11 @@
 import { Component } from 'react';
 import Popular from './Popular'
 import Battle from './Battle';
-import './App.css';
 import { ThemeProvider } from '../contexts/theme';
 import Nav from './Nav';
 import { Route, BrowserRouter as Router } from 'react-router-dom';
+
+
 class App extends Component {
   constructor(props) {
     super(props)

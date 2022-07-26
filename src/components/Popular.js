@@ -128,10 +128,10 @@ export default class Popular extends Component {
           }))
         })
         .catch(() => {
-          console.warn('Error fetching repos ', this.error);
+          console.warn('❗ Error fetching repos ', this.error);
 
           this.setState({
-            error: 'There was an error fetching the repositories.'
+            error: '❗ There was an error fetching the repositories.'
           })
         })
         

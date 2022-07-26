@@ -390,7 +390,7 @@ li {
   
   .btn.nav-link {
     padding: 0.4rem;
-    font-size: .8rem;
+    font-size: 80%;
     text-transform: capitalize;
   }
   .nav-link {
@@ -398,6 +398,13 @@ li {
     font-weight: 500;
     box-shadow:  inset 0rem .1rem .2em rgba(0, 0, 0, 0.01);
   }
+
+  .naval.nav-link {
+    font-size: unset;
+    font-weight: unset;
+    box-shadow:  unset;
+  }
+
   .player-label{
     font-size: 1.2rem;
     margin-left: 0;
@@ -454,13 +461,19 @@ li {
   
   .btn.nav-link {
     padding: 0.4rem;
-    font-size: .8rem;
+    font-size: 60%;
     text-transform: capitalize;
   }
   .nav-link {
     font-size: .7rem;
     font-weight: 500;
     box-shadow:  inset 0rem .1rem .2em rgba(0, 0, 0, 0.01);
+  }
+
+  .naval.nav-link {
+    font-size: unset;
+    font-weight: unset;
+    box-shadow:  unset;
   }
   
 }

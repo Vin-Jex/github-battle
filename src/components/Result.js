@@ -124,6 +124,8 @@ import Cards from './Cards'
 import PropTypes from 'prop-types'
 import Loading from './Loading'
 import ToolTip from './ToolTip'
+import queryString from 'query-string'
+import { Link } from 'react-router-dom'
 
 function ProfileList({ profile }) {
   return (
@@ -158,7 +160,8 @@ function ProfileList({ profile }) {
 }
 
 
-/* <ul className="card-list">
+/****
+ <ul className="card-list">
    <li>
       <FaUser color='rgb(239, 115, 115)' size={22} />{profile.name}
     </li>
@@ -199,7 +202,7 @@ export default class Result extends Component {
   }
 
   componentDidMount () {
-    const { playerOne, playerTwo } = this.props
+    const { playerOne, playerTwo } = queryString.parse(this.props.location.search)
 
     battle([ playerOne, playerTwo ])
       .then((players) => {
@@ -255,35 +258,16 @@ export default class Result extends Component {
           </Cards>
 
         </div>
-        <button 
+        <Link 
           className='btn btn-dark btn-space'
-          onClick={this.props.onReset}>
+          to='/battle'
+        >
             Reset
-        </button>
+        </Link>
       </Fragment>
     )
   }
 }
-
-Result.propTypes = {
-  playerOne: PropTypes.string.isRequired,
-  playerTwo: PropTypes.string.isRequired,
-  onReset: PropTypes.func.isRequired
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

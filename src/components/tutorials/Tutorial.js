@@ -6,6 +6,7 @@ import Proptypes from "./Proptypes";
 import IMG1 from '../../asset/img-1.jpg'
 import Form from './Controlled Component' 
 import DynamicRouting from "./DynamicRouting";
+import Routers from "./Router";
 
 // SEPARATION OF CONCERNS
 export default class Tutorial extends Component {
@@ -41,6 +42,7 @@ export default class Tutorial extends Component {
                     addFriend={() => alert('Added!')}
                 />
                 <Form />
+                <Routers />
             </div>
         )
     }

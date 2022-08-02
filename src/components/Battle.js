@@ -3,6 +3,7 @@ import { FaUserFriends, FaFighterJet, FaTrophy, FaTimesCircle } from 'react-icon
 import PropTypes from 'prop-types'  
 import Result from './Result'
 import { ThemeConsumer } from '../contexts/theme'
+import { Link } from 'react-router-dom'
 
 function Instructions () {
     return (
@@ -144,7 +145,6 @@ export default class Battle extends Component {
         this.state = {
             playerOne: null,
             playerTwo: null,
-            battle: false
         }
         this.handleReset = this.handleReset.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
@@ -165,21 +165,24 @@ export default class Battle extends Component {
     
     render () {
 
-        const { playerOne, playerTwo, battle } = this.state
-
-        if (battle === true) {
-            return (
-                <Result 
-                    playerOne={playerOne} 
-                    playerTwo={playerTwo}
-                    onReset={() => this.setState({
-                        playerOne: null,
-                        playerTwo: null,
-                        battle: false
-                    })}
-                />
-            )
-        }   
+        const { playerOne, playerTwo } = this.state
+/**
+|--------------------------------------------------
+|        if (battle === true) {
+|         return (
+|          <Result 
+|            playerOne={playerOne} 
+|            playerTwo={playerTwo}
+|            onReset={() => this.setState({
+|             playerOne: null,
+|             playerTwo: null,
+|             battle: false
+|             })}
+|           />
+|          )
+|        } 
+|--------------------------------------------------
+*/  
         
     return (
       <Fragment>
@@ -215,11 +218,15 @@ export default class Battle extends Component {
 
 
               {playerOne && playerTwo && (
-                  <button
-                      className={`btn ${theme === 'dark' ? 'btn-light' : 'btn-dark'} btn-space`}
-                      onClick={() => this.setState({battle: true})}>
+                  <Link
+                    className={`btn btn-dark btn-space`}
+                    to={{
+                      pathname: '/battle/result',
+                      search: `?playerOne=${playerOne}&playerTwo=${playerTwo}`
+                    }}
+                  >
                       Battle
-                  </button>
+                  </Link>
               )}
             </div>            
           )}

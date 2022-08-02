@@ -40,6 +40,7 @@ export default function Nav () {
             {theme === 'light' ? <FaMoon color='rgb(53, 48, 48)' className='icon' /> : <FaSun color='rgba(207, 24, 24, 0.829)' className='icon' />}
           </button>
         </nav>
+        
       )}
     </ThemeConsumer>
   )

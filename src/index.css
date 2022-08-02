@@ -34,7 +34,7 @@ li {
   max-width: 100%;  /* 1200px */
   margin: 0 auto;
   padding: 2rem;
-  min-height: 1000px;
+  min-height: 45rem;
 }
 
 .dark {
@@ -431,7 +431,7 @@ li {
   }
 
   .icon {
-    font-size: 1rem;
+    font-size: 65%;
     margin: -1rem 0 0 0;
   }
 
@@ -487,18 +487,18 @@ li {
 
 }
 
-@media screen and (max-width: 620px) {
+@media screen and (max-width: 600px) {
 
   .container {
     max-width: 100%;  /* 1200px */
     margin: 0 auto;
     padding: 1rem 1rem 2rem 1rem;
-    min-height: 1000px;
+    min-height: 45rem;
   }
   
   .btn.nav-link {
-    padding: 0.4rem;
-    font-size: 65%;
+    padding: 0.3rem;
+    font-size: 80%;
     text-transform: capitalize;
   }
   .nav-link {
@@ -508,14 +508,14 @@ li {
   }
 
   .naval.nav-link {
-    font-size: .88rem;
+    font-size: 140%;
     font-weight: unset;
     box-shadow:  unset;
   }
 
   .error {
     color: #ff1616;
-    font-size: .8rem;
+    font-size: 100%;
     margin: 2.5rem 0;
   }
   

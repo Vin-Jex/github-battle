@@ -1,10 +1,12 @@
-import { Component } from 'react';
-import Popular from './Popular'
-import Battle from './Battle';
+import React, { Component } from 'react';
 import { ThemeProvider } from '../contexts/theme';
 import Nav from './Nav';
 import { Route, BrowserRouter as Router, Switch } from 'react-router-dom';
-import Result from './Result';
+import Loading from './Loading';
+// Dynamic Import
+const Popular = React.lazy(() => import('./Popular'))
+const Battle = React.lazy(() => import('./Battle'))
+const Result = React.lazy(() => import('./Result'))
 
 const style = {
   header: {
@@ -56,12 +58,14 @@ class App extends Component {
               }}>
               <Nav />
 
-              <Switch>
-                <Route exact path='/' component={Popular} />
-                <Route exact path='/battle' component={Battle} />
-                <Route path='/battle/result' component={Result} />
-                <Route render={() => <h1 style={style.header}>404 <span style={style.span}> Not Found! </span></h1>} />
-              </Switch>
+              <React.Suspense fallback={<Loading />} >
+                <Switch>
+                  <Route exact path='/' component={Popular} />
+                  <Route exact path='/battle' component={Battle} />
+                  <Route path='/battle/result' component={Result} />
+                  <Route render={() => <h1 style={style.header}>404 <span style={style.span}> Not Found! </span></h1>} />
+                </Switch>
+              </React.Suspense>
             </div>
           </div>
         </ThemeProvider>       

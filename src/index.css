@@ -211,9 +211,6 @@ li {
   display: flex;
   flex-direction: row;
 }
-.margin-top {
-  margin-top: -1rem;
-}
 
 .player-container {
   margin: 5rem 0;
@@ -426,7 +423,7 @@ li {
   }
 
   .naval.nav-link {
-    font-size: 1rem;
+    font-size: .8rem;
     font-weight: bold;
   }
 
@@ -498,7 +495,7 @@ li {
   
   .btn.nav-link {
     padding: 0.3rem;
-    font-size: 80%;
+    font-size: 75%;
     text-transform: capitalize;
   }
   .nav-link {
@@ -508,7 +505,7 @@ li {
   }
 
   .naval.nav-link {
-    font-size: 140%;
+    font-size: 120%;
     font-weight: unset;
     box-shadow:  unset;
   }

@@ -47,4 +47,4 @@ export default class Tutorial extends Component {
     }
 }
 
-{/* <Tutorial user={{ name: 'Jane Doe', username: 'janedoe', img: IMG }} /> */}
+/* <Tutorial user={{ name: 'Jane Doe', username: 'janedoe', img: IMG }} /> */

@@ -31,12 +31,25 @@ To get started  you can simply clone this `github-battle` repository and install
 To Clone the `github-battle` repository using git:
 
 ```bash
-git clone https://github.com/pythoniclaver/github-battlevvvvvvvvvvvvvvvvv
+git clone https://github.com/pythoniclaver/github-battle
 cd github-battle
 ```
 
+Install dependencies with this command:
+```bash
+npm install
+```
+
+Run the application with this command:
+```bash
+npm start
+```
+
 ## Tech Stack
-* HTML
-* CSS3
-* JavaScript
-* Font Awesome
+* ReactJS
+* CSS
+* GitHub API
+* Context API
+* React-query
+* React Icons
+

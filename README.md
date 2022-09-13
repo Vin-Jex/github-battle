@@ -1,5 +1,6 @@
+# GitHub Repo Battle
 
-- <h4>GitHub-repo-battle is a project 🔭 that compares two github users and determine the productivity of each user and returns a winner 🏆 and a loser based on their followers, following, stars, folk, commit, and repo.</h4> 
+GitHub Repo Battle is a project 🔭 that compares two github users and determine the productivity of each user and returns a winner 🏆 and a loser based on their followers, following, stars, folk, commit, and repo.
 
 
 ## Live Demonstration
@@ -14,7 +15,7 @@ Here are screenshots that show the E-commerce demo application in use.
 
 ---
 
-**Features Section**
+**Popular Repo Page**
 <img src="./images/Screenshot (276).png" alt="Features Section" title="Features Section">
 
 ---
